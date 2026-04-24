@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "oereor | Personal Page"
   text: "Welcome to My World"
-  tagline: My great project tagline
+  tagline: May this journey lead us starward
   actions:
     - theme: brand
       text: Markdown Examples
