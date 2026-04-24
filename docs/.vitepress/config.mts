@@ -1,5 +1,7 @@
 import { defineConfig } from 'vitepress'
 
+import mathjax3 from 'markdown-it-mathjax3'
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "oereor | Personal Page",
@@ -27,7 +29,7 @@ export default defineConfig({
   },
   markdown: {
     config: (md) => {
-      md.use(require('markdown-it-mathjax3'))
+      md.use(mathjax3)
     }
   }
 })
