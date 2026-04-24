@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "oereor | Personal Page"
-  text: "A Blog Site"
+  text: "Welcome to My World"
   tagline: My great project tagline
   actions:
     - theme: brand
