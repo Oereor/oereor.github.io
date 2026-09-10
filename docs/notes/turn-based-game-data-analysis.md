@@ -1,7 +1,7 @@
 ---
 layout: doc
-title: '如何分析 `TurnBasedGameData` 里面的配置文件？'
-description: 记录下我磕磕绊绊的分析过程。
+title: '如何分析 TurnBasedGameData 里面的配置文件？'
+date: 2026-09-10
 ---
 
 > [!WARNING]
