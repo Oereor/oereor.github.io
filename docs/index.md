@@ -1,18 +1,7 @@
 ---
-layout: home
+layout: page
 title: oereor
-description: oereor 的个人主页与项目档案。
-hero:
-  name: oereor's Blog
-  text: 在消失之前记录下一些东西。
-  tagline: May this journey lead us starward.
-  actions:
-    - theme: brand
-      text: 做过的项目
-      link: /projects/
-    - theme: alt
-      text: 关于我
-      link: /about
+description: oereor 的个人主页、随笔与项目档案。
 ---
 
-<ProjectCollection home />
+<HomeLanding />

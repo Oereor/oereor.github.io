@@ -5,10 +5,8 @@ import { data as projects } from '../../../projects.data.mts'
 import ProjectCard from './ProjectCard.vue'
 
 const props = withDefaults(defineProps<{
-  home?: boolean
   showIntro?: boolean
 }>(), {
-  home: false,
   showIntro: false
 })
 
@@ -19,7 +17,7 @@ const archived = computed(() => projects.filter((project) => project.status === 
 </script>
 
 <template>
-  <main class="project-collection" :class="{ 'project-collection--home': props.home }">
+  <main class="project-collection">
     <header v-if="props.showIntro" class="project-index-intro">
       <p class="eyebrow">项目档案</p>
       <h1>{{ frontmatter.title }}</h1>
@@ -43,7 +41,6 @@ const archived = computed(() => projects.filter((project) => project.status === 
     <section v-if="active.length" class="project-section" aria-labelledby="active-projects">
       <div class="project-section__heading">
         <h2 id="active-projects">更多项目</h2>
-        <a v-if="props.home" href="/projects/">查看全部</a>
       </div>
       <div class="project-grid project-grid--regular">
         <ProjectCard
