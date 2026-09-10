@@ -1,8 +1,8 @@
 ---
-title: 笔记
-description: 一些以后可能写下的技术笔记。
+title: 随笔
+description: 想到什么写什么。
 ---
 
-# 笔记
+# 随笔
 
 这里暂时还没有内容。
