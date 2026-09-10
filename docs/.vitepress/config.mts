@@ -13,6 +13,7 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: '项目', link: '/projects/' },
+      { text: '随笔', link: '/notes/' },
       { text: '关于', link: '/about' }
     ],
     search: {
