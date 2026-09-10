@@ -1,25 +1,18 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
 layout: home
-
+title: oereor
+description: oereor 的个人主页与项目档案。
 hero:
-  name: "oereor | Personal Page"
-  text: "Welcome to My World"
-  tagline: May this journey lead us starward
+  name: oereor
+  text: 个人项目、实验，以及以后可能写下的一些笔记。
+  tagline: May this journey lead us starward.
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: 查看项目
+      link: /projects/
     - theme: alt
-      text: API Examples
-      link: /api-examples
-
-features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+      text: 关于我
+      link: /about
 ---
 
+<ProjectCollection home />
