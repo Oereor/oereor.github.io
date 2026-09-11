@@ -442,3 +442,7 @@ BTW，在配置中 `SP` 代表的就是能量，不要误认为是 Skill Point �
     ]
   }
 ```
+
+### 忆灵配置
+
+忆灵的配置在 `AvatarServantConfig.json` 和 `AvatarServantSkillConfig.json` 里面，基本上和角色配置是相互对应的。这里也不再赘述。
