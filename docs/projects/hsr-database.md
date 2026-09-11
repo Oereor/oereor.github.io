@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: doc
 title: HSR Archive
 description: 一个基于游戏数据构建的非官方《崩坏：星穹铁道》数据档案站。
 status: featured
@@ -10,6 +10,12 @@ tech:
   - TypeScript
   - Svelt
 ---
+
+# {{ $frontmatter.title }}
+
+{{ $frontmatter.description }}
+
+<ProjectMeta />
 
 ## 简介
 

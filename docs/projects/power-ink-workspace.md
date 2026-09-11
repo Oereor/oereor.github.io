@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: doc
 title: PowerInkWorkspace
 description: 一个较早期的 C# 项目，目前已经不再积极维护。
 status: archived
@@ -8,6 +8,12 @@ github: https://github.com/Oereor/PowerInkWorkspace
 tech:
   - C#
 ---
+
+# {{ $frontmatter.title }}
+
+{{ $frontmatter.description }}
+
+<ProjectMeta />
 
 ## 项目简介
 

@@ -4,6 +4,8 @@ title: '如何分析 TurnBasedGameData 里面的配置文件？'
 date: 2026-09-10
 ---
 
+# {{ $frontmatter.title }}
+
 > [!WARNING]
 > 本文仅作为学习用途。请尊重游戏知识产权。
 

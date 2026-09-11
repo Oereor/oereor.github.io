@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: doc
 title: HSR Relic Simulator
 description: 一个《崩坏：星穹铁道》遗器系统模拟器。
 status: active
@@ -9,6 +9,12 @@ website: https://hsr-relic-simulator.vercel.app
 tech:
   - TypeScript
 ---
+
+# {{ $frontmatter.title }}
+
+{{ $frontmatter.description }}
+
+<ProjectMeta />
 
 ## 项目简介
 

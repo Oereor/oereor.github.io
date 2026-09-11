@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: doc
 title: HSR Gacha Simulator
 description: 一个《崩坏：星穹铁道》跃迁系统模拟器。
 status: active
@@ -10,6 +10,12 @@ tech:
   - TypeScript
   - Vue.js
 ---
+
+# {{ $frontmatter.title }}
+
+{{ $frontmatter.description }}
+
+<ProjectMeta />
 
 ## 项目简介
 

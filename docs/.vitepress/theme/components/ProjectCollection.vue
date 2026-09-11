@@ -1,69 +1,46 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useData } from 'vitepress'
 import { data as projects } from '../../../projects.data.mts'
-import ProjectCard from './ProjectCard.vue'
 
-const props = withDefaults(defineProps<{
-  showIntro?: boolean
-}>(), {
-  showIntro: false
-})
-
-const { frontmatter } = useData()
 const featured = computed(() => projects.filter((project) => project.status === 'featured'))
 const active = computed(() => projects.filter((project) => project.status === 'active'))
 const archived = computed(() => projects.filter((project) => project.status === 'archived'))
+
+const groups = computed(() => [
+  { id: 'featured-projects', title: '重点项目', projects: featured.value },
+  { id: 'active-projects', title: '其他项目', projects: active.value },
+  { id: 'archived-projects', title: '归档', projects: archived.value }
+])
 </script>
 
 <template>
-  <main class="project-collection">
-    <header v-if="props.showIntro" class="project-index-intro">
-      <p class="eyebrow">项目档案</p>
-      <h1>{{ frontmatter.title }}</h1>
-      <p>{{ frontmatter.description }}</p>
-    </header>
-
-    <section v-if="featured.length" class="project-section" aria-labelledby="featured-projects">
-      <div class="project-section__heading">
-        <h2 id="featured-projects">重点项目</h2>
-      </div>
-      <div class="project-grid project-grid--featured">
-        <ProjectCard
-          v-for="project in featured"
+  <div class="project-collection">
+    <section
+      v-for="group in groups"
+      v-show="group.projects.length"
+      :key="group.id"
+      class="project-list-section"
+      :aria-labelledby="group.id"
+    >
+      <h2 :id="group.id">{{ group.title }}</h2>
+      <div class="project-list">
+        <a
+          v-for="project in group.projects"
           :key="project.url"
-          :project="project"
-          variant="featured"
-        />
+          class="project-list-item"
+          :href="project.url"
+          :aria-label="`查看项目：${project.title}`"
+        >
+          <article>
+            <strong class="project-list-item__title">{{ project.title }}</strong>
+            <p class="project-list-item__description">{{ project.description }}</p>
+            <p v-if="project.tech.length" class="project-list-item__tech">
+              {{ project.tech.join(' · ') }}
+            </p>
+          </article>
+          <span class="project-list-item__arrow" aria-hidden="true">→</span>
+        </a>
       </div>
     </section>
-
-    <section v-if="active.length" class="project-section" aria-labelledby="active-projects">
-      <div class="project-section__heading">
-        <h2 id="active-projects">更多项目</h2>
-      </div>
-      <div class="project-grid project-grid--regular">
-        <ProjectCard
-          v-for="project in active"
-          :key="project.url"
-          :project="project"
-          variant="regular"
-        />
-      </div>
-    </section>
-
-    <section v-if="archived.length" class="project-section project-section--archive" aria-labelledby="archived-projects">
-      <div class="project-section__heading">
-        <h2 id="archived-projects">归档</h2>
-      </div>
-      <div class="project-grid">
-        <ProjectCard
-          v-for="project in archived"
-          :key="project.url"
-          :project="project"
-          variant="archive"
-        />
-      </div>
-    </section>
-  </main>
+  </div>
 </template>

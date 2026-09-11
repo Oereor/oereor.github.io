@@ -4,6 +4,8 @@ title: 'TurnBasedGameData ——角色篇'
 date: 2026-09-10
 ---
 
+# {{ $frontmatter.title }}
+
 ## 基础信息
 
 首先明确一点：在这些内部的配置文件中，角色并不是用我们熟知的 `Character` 来称呼的，而是使用 `Avatar`。因此与角色有关的配置文件都应该包含 `Avatar` 这个关键字。
