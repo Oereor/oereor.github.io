@@ -114,3 +114,156 @@ date: 2026-09-13
 ### StanceCount
 
 控制有几管韧性条的。例如~~丑得要命的~~「金血忆灵·裁定忘却之形」就有 4 管韧性。
+
+## 敌方单位实例
+
+敌方单位的弱点/抗性、技能组等数据是绑带在具体的个体身上的。我们以「可可利亚，虚妄之母」为例，来看看具体个体的字段配置。
+
+```
+{
+    "MonsterName": {
+      "Hash": 11060815478526403306
+    },
+    "MonsterIntroduction": {
+      "Hash": 11835800330885102460
+    },
+    "MonsterStrategy": [],
+    "MonsterID": 1005010,
+    "MonsterTemplateID": 1005010,
+    "EliteGroup": 1,
+    "HardLevelGroup": 1,
+    "AttackModifyRatio": {
+      "Value": 1
+    },
+    "DefenceModifyRatio": {
+      "Value": 1
+    },
+    "HPModifyRatio": {
+      "Value": 1
+    },
+    "SpeedModifyRatio": {
+      "Value": 1
+    },
+    "StanceModifyRatio": {
+      "Value": 1
+    },
+    "StanceWeakList": [
+      "Fire",
+      "Thunder",
+      "Quantum"
+    ],
+    "DamageTypeResistance": [
+      {
+        "DamageType": "Physical",
+        "Value": {
+          "Value": 0.4
+        }
+      },
+      {
+        "DamageType": "Ice",
+        "Value": {
+          "Value": 0.6
+        }
+      },
+      {
+        "DamageType": "Wind",
+        "Value": {
+          "Value": 0.4
+        }
+      },
+      {
+        "DamageType": "Imaginary",
+        "Value": {
+          "Value": 0.2
+        }
+      }
+    ],
+    "DebuffResist": [
+      {
+        "Key": "STAT_CTRL_Frozen",
+        "Value": {
+          "Value": 1
+        }
+      },
+      {
+        "Key": "STAT_Confine",
+        "Value": {
+          "Value": 1
+        }
+      }
+    ],
+    "CustomValueTags": [],
+    "CustomValues": [
+      {
+        "BFLIFKBEOPJ": "Monster_W1_CocoliaP2_00_SummonMonsterID01",
+        "MNDFOPKBHKP": 1002013
+      },
+      {
+        "BFLIFKBEOPJ": "Monster_W1_CocoliaP2_00_SummonMonsterID02",
+        "MNDFOPKBHKP": 1002014
+      }
+    ],
+    "DynamicValues": [],
+    "SummonIDList": [
+      1002013,
+      1002014
+    ],
+    "OverrideAIPath": "",
+    "OverrideAISkillSequence": [],
+    "AbilityNameList": [],
+    "SkillList": [
+      100501001,
+      100501002,
+      100501003,
+      100501004,
+      100501005,
+      100501006,
+      100501007,
+      100501008,
+      100501009
+    ],
+    "OverrideSkillParams": []
+  }
+```
+
+### MonsterName / MonsterIntroduction
+
+敌方单位的名字/简介。在 `TextMapCHS.json` 里面用 hash 解析出文本即可。
+
+### MonsterTemplateID
+
+该具体实例套用的模板 ID。
+
+### MonsterID
+
+该具体实例的 ID。这里你会发现 ID 和模板的一样。
+
+一般来说，具体实例的 ID 是模板 ID 加上两位数的后缀，例如 `100501001` `100501002` 等；但是始终有一个特殊的实例个体，它的 ID 就是模板的 ID。我们并不清楚游戏内的具体机制如何，我一般将此实例称为「默认个体」。
+
+### {Attack/Defence/HP/Speed/Stance}ModifyRatio
+
+看名字就知道，攻击力/防御力/生命值/速度/韧性值的乘区。
+
+### StanceWeakList
+
+依旧望文生义，弱点列表。
+
+### DamageTypeResistance
+
+抗性列表。下面的值几乎是在写大白话了吧？
+
+### DebuffResist
+
+抵抗某些特定负面状态的概率。在本例中：
+- `STAT_CTRL_Frozen: 1` 代表抵抗冻结状态的概率是 100%；也就是说，在没有无视抗性的情况下，可可利亚是冻不住的。
+- `STAT_Confine: 1` 代表抵抗禁锢状态的概率是 100%；同样，在没有无视抗性的情况下，可可利亚也不会陷入禁锢状态。
+
+其他的一些负面状态抗性还包括灼烧/风化/纠缠抵抗等。
+
+### SummonIDList
+
+这个名字很直观了。召唤物 ID。
+
+### SkillList
+
+技能组列表。跟角色的技能组配置很像。~~废话，都是技能，能不像吗~~
